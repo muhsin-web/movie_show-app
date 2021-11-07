@@ -35,8 +35,9 @@ function getChildMovies(url) {
 function showChildMovies(data) {
       // main.innerHTML = ' ';
       data.forEach((movie, i) => {
-            const {vote_average, title, overview, poster_path, vote_count} = movie;
-            // element +=
+        const { vote_average, title, overview, poster_path, release_date } = movie;
+        
+        const release = release_date.slice(0, 4);
             const movieEl = document.createElement('div')
             movieEl.classList.add('movie');
         movieEl.innerHTML =
@@ -47,8 +48,8 @@ function showChildMovies(data) {
                                     <div class="movie_info">
                                                 <h1 class="movie_title">${title}</h1>
                                                 <span>
-                                                      <h2 class="genre">${vote_count} +</h2>
-                                                      <span class="rate">${vote_average}</span>
+                                                      <h2 class="genre">Year: ${release}</h2>
+                                                      <span class="rate ${rate(vote_average)}">${vote_average}</span>
                                                 </span>
                                           </div>
                                           <div class="overview">
@@ -65,6 +66,17 @@ function showChildMovies(data) {
 }
 }
 
+function rate(rate) {
+  if (rate >= 8.8) {
+    return 'green'
+  } else if (rate >= 7.5) {
+    return 'orange'
+  } else if (rate >= 5.5) {
+    return 'gold'
+  } else {
+    return 'red'
+  }
+}
 loadingData(API_URL, main)
 loadingData(API_URL_1, main2)
 loadingData(API_URL_2, main3)
@@ -105,13 +117,10 @@ $(document).ready(function () {
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     });
     main.style.opacity = '1';
-  }, 3000)
+  }, 1000)
 
 
   $('.toggle-ball').click(function () {
@@ -123,18 +132,7 @@ $(document).ready(function () {
   })
 })
 
-
-
-fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-random-movies&page=5", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-		"x-rapidapi-key": "b6c81705b2msh6dba127d0f600f5p18c3f6jsn68cd5abde8d2"
-	}
-})
-  .then(res => res.json()).then(data => {
-  console.log(data)
-})
-.catch(err => {
-	console.error(err);
+const preloader = document.querySelector(".preloader");
+window.addEventListener("load", function(){
+      preloader.style.display = "none";
 });
