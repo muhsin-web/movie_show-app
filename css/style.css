@@ -57,6 +57,7 @@ body{
       position: relative;
       padding: 20px 0;
       cursor: pointer;
+      margin-left: 65px;
 }
 #pro, .pro_icon{
       color: #fff;
@@ -329,6 +330,9 @@ ul.slick-dots{
             color: #fff;
             transform: translateX(100%);
       }
+      .toggle{
+            display: block;
+      }
       .logo_text{
             font-size: 1.7rem;
             margin-left: 1rem;
@@ -336,13 +340,16 @@ ul.slick-dots{
       .nav_list{
             margin-top: 5rem;
             padding-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
       }
       .nav_item{
             margin-bottom: 1rem;
       }
       .nav_link{
             color: #fff;
-            /* padding: 10px; */
+            padding: 10px;
             text-decoration: none;
             font-size: 1.3rem;
       }
@@ -364,6 +371,7 @@ ul.slick-dots{
             padding: 0 1.5rem;
       }
       .profile{
+            color: #fff;
             width: 80%;
             margin-left: 20px;
       }
