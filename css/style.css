@@ -1,68 +1,42 @@
 *{
       box-sizing: border-box;
+      padding: 0;
+      margin: 0;
 }
 body{
       font-family: 'Poppins' sans-serif;
-      margin: 0;
-      background: rgba(0,0,0,0.95);
+      background: #000000f2;
 }
-.navbar{
-      height: 60px;
-      width: 100%;
-      background-color: #000;
+.menu{
+      transition: transform 1s;
 }
-.navbar-container{
-      display: flex;
-      align-items: center;
-      height: 100%;
-      /* background-color: red; */
-      padding: 0 65px;
-      color: white;
+.nav_list{
+      margin-top: 5rem;
+      list-style: none;
 }
-.logo-container{
-      flex: 1;
+.nav_item{
+      margin-bottom: 1rem;
+}
+.nav_link{
+      color: #fff;
+      text-transform: capitalize;
+      text-decoration: none;
+      font-size: 1.3rem;
 }
 .logo{
       font-size: 30px;
       color: #4dbf00;
 }
-.menu-container{
-      flex: 6;
-}
-.menu-list{
-      display: flex;
-      list-style: none;
-}
-.list-item{
-      margin-right: 30px;
-}
+
 .active{
       font-weight: bold;
 }
-.profile-container{
-      flex: 2;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-}
-.profile-text-container{
-      margin: 0 15px;
-}
-.profile-pic{
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-}
+
 .toggle{
-      width: 45px;
-      height: 20px;
+      font-size: 1.5rem;
+      margin-right: 20px;
       border-radius: 30px;
-      background-color: white;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      position: relative;
+      color: #fff;
 }
 .toggle-icon{
       color: gold;
@@ -133,12 +107,12 @@ section{
       background: black;
       color: #fff;
       height: 100%;
-      margin-bottom: 0 !important;
+      margin: 0 !important;
 }
 .section_title{
       font-size: 2rem;
       font-weight: bold;
-      margin: 1rem 1rem 1rem 0;
+      padding: 2rem 0 2rem 2rem;
       text-transform: capitalize;
 }
 img{
@@ -150,7 +124,7 @@ img{
       border: 1px solid rgb(63, 63, 63);
       border-radius: 20px;
       position: relative;
-      height: 400px !important;
+      height: 430px !important;
 }
 .movie_img{
       height: 85%;
@@ -248,16 +222,92 @@ ul.slick-dots{
 }
 
 
-
-
-
-li{
-      margin:  0 20px;
-
+@media screen and (max-width: 768px) {
+      .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+      }
+      .menu{
+            position: fixed;
+            background: rgba(0, 0, 0, 0.873);
+            top: 62px;
+            right: 0;
+            height: 100vh;
+            width: 70%;
+            z-index: 99;
+            display: block;
+            color: #fff;
+            transform: translateX(100%);
+      }
+      .logo_text{
+            font-size: 1.7rem;
+            margin-left: 1rem;
+      }
+      .nav_list{
+            margin-top: 5rem;
+            padding-left: 1rem;
+      }
+      .nav_item{
+            margin-bottom: 1rem;
+      }
+      .nav_link{
+            color: #fff;
+            /* padding: 10px; */
+            text-decoration: none;
+            font-size: 1.3rem;
+      }
+      .hero_text{
+            padding-top: 3.5rem;
+            line-height: 1rem;
+            width: 89%;
+      }
+      .hero_text p{
+            line-height: 1.5rem;
+      }
+      .title{
+            font-size: 2rem;
+      }
+      section{
+            padding: 0 1.5rem;
+      }
+      .hero{
+            padding: 0 1.5rem;
+      }
 }
-.box{
-      width: 200px;
-      height: 300px !important;
-      background-color: red;
-      border: 1px solid black;
+.profile{
+      width: 80%;
+      margin-left: 20px;
+}
+.profile div{
+      display: flex;
+      justify-content: space-between;
+}
+#pro{
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: capitalize;
+}
+.pro_icon{
+      font-size: 1.4rem;
+}
+.profile_menu{
+      display: none !important;
+      background: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+}
+.profile:hover .profile_menu{
+      display: block !important;
+}
+.btn{
+      margin-top: 1rem;
+}
+.show{
+      transform: translateX(0);
 }

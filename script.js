@@ -117,6 +117,10 @@ $(document).ready(function () {
   $('.toggle-ball').click(function () {
     $(this).toggleClass('left')
   })
+
+  $('.toggle').click(function () {
+    $('.menu').toggleClass('show')
+  })
 })
 
 
