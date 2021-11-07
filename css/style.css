@@ -267,8 +267,8 @@ img{
 }
 
 ul.slick-dots{
+      color: #fff !important;
       display: none !important;
-      opacity: 0;
 }
 
 .footer{
@@ -317,6 +317,9 @@ ul.slick-dots{
             top: 0;
             background: rgba(0, 0, 0, 0.839);
             z-index: 99;
+      }
+      .section_title{
+            font-size: 1.8rem;
       }
       .menu{
             position: fixed;
