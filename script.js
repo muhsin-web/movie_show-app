@@ -31,7 +31,7 @@ function getChildMovies(url) {
             showChildMovies(data.results)
       })
 }
-// main.style.opacity = '0';
+main.style.opacity = '0';
 function showChildMovies(data) {
       // main.innerHTML = ' ';
       data.forEach((movie, i) => {
@@ -119,7 +119,6 @@ $(document).ready(function () {
         }
       ]
     });
-    main.style.opacity = '1';
   }, 1000)
 
 
@@ -131,6 +130,9 @@ $(document).ready(function () {
     $('.menu').toggleClass('show')
   })
 })
+setInterval(function () {
+  main.style.opacity = '1';
+  }, 2300)
 
 const preloader = document.querySelector(".preloader");
 window.addEventListener("load", function(){
